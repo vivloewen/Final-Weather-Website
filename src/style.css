@@ -17,6 +17,11 @@
   margin: 40px 60px 40px 80px;
   text-align: center;
 }
+#buttonSearch {
+  padding: 5px 40px;
+  background-color: black;
+  border-color: black;
+}
 .currentWeather {
   margin: 40px 60px 40px 80px;
 }
