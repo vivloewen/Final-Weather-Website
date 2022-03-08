@@ -2,13 +2,27 @@
   margin: 30px auto;
 }
 .weathercontainer {
-  max-width: 80%;
+  max-width: 70%;
   border: solid black 1px;
   box-shadow: 2px 2px 2px grey;
   border-radius: 10px;
   margin: 40px 60px;
 }
-
+.greeting {
+  margin: 40px 60px;
+}
+.search {
+  margin: 40px 60px;
+}
+.currentWeather {
+  margin: 40px 60px;
+}
+.forecast {
+  margin: 40px 60px;
+}
+footer {
+  margin: 40px 60px;
+}
 h1 {
   color: blue;
 }
@@ -17,6 +31,10 @@ h1 {
   max-height: 35px;
 }
 #currentIcon {
+  max-width: 100px;
+  max-height: 100px;
+}
+#forecastIcon {
   max-width: 35px;
   max-height: 35px;
 }
