@@ -41,6 +41,12 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let currentDateElement = document.querySelector("#currentDate");
   currentDateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let currentIcon = document.querySelector("#currentIcon");
+  let weatherIcon = response.data.weather[0].icon;
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
 }
 
 axios.get(apiUrlCity).then(displayTemperature);
