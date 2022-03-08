@@ -7,21 +7,24 @@
   box-shadow: 2px 2px 2px grey;
   border-radius: 10px;
   margin: 40px 60px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .greeting {
-  margin: 40px 60px;
+  margin: 40px 60px 40px 80px;
+  text-align: center;
 }
 .search {
-  margin: 40px 60px;
+  margin: 40px 60px 40px 80px;
+  text-align: center;
 }
 .currentWeather {
-  margin: 40px 60px;
+  margin: 40px 60px 40px 80px;
 }
 .forecast {
-  margin: 40px 60px;
+  margin: 40px 60px 40px 80px;
 }
 footer {
-  margin: 40px 60px;
+  margin: 40px 60px 40px 80px;
 }
 h1 {
   color: blue;
