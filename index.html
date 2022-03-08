@@ -12,6 +12,10 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/d77975de06.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -37,15 +41,29 @@
           </form>
         </div>
         <div class="currentWeather">
-          <h1 class="currentCity">Bamberg</h1>
-          <h2>
-            <span class="currentDate">Tuesday, 09:44</span>,
-            <span class="weatherDescription">sunny</span>
-          </h2>
-          <h3>
-            Humidity: <span class="humidity">80%</span>, Wind speed:
-            <span class="wind"> 10</span> km/h
-          </h3>
+          <div class="row">
+            <div class="col-6 city">
+              <h1 class="currentCity">Bamberg</h1>
+              <h2>
+                <span class="currentDate">Tuesday, 09:44</span>,
+                <span class="weatherDescription">sunny</span>
+              </h2>
+              <h3>
+                Humidity: <span class="humidity">80%</span>, Wind speed:
+                <span class="wind"> 10</span> km/h
+              </h3>
+            </div>
+            <div class="col-3 icon">
+              <h1 class="icon"><i class="fa-solid fa-sun"></i></h1>
+            </div>
+            <div class="col-3 temp">
+              <h1 class="currentTemp">
+                18 <span class="celsius">°C</span>|<span class="fahrenheit"
+                  >F
+                </span>
+              </h1>
+            </div>
+          </div>
         </div>
         <footer>
           This project was coded by Vivienne Loewen and is open-sourced on
