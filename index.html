@@ -16,32 +16,46 @@
   <body>
     <div class="container">
       <div class="weathercontainer">
-        <h1>Good morning, name</h1>
-        <form>
-          <div class="row">
-            <div class="col-8">
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="cityName"
-                  placeholder="Insert a city"
-                />
+        <h1 class="greeting">Good morning, <span class="name"> name</span></h1>
+        <div class="search">
+          <form>
+            <div class="row">
+              <div class="col-8">
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="cityName"
+                    placeholder="Insert a city"
+                  />
+                </div>
+              </div>
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary">Search</button>
               </div>
             </div>
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-          </div>
-        </form>
-
+          </form>
+        </div>
+        <div class="currentWeather">
+          <h1 class="currentCity">Bamberg</h1>
+          <h2>
+            <span class="currentDate">Tuesday, 09:44</span>,
+            <span class="weatherDescription">sunny</span>
+          </h2>
+          <h3>
+            Humidity: <span class="humidity">80%</span>, Wind speed:
+            <span class="wind"> 10</span> km/h
+          </h3>
+        </div>
         <footer>
           This project was coded by Vivienne Loewen and is open-sourced on
-          GitHub
+
           <a
             href="https://github.com/vivloewen/Final-Weather-Website"
             target="_blank"
-          ></a>
+          >
+            GitHub</a
+          >
         </footer>
       </div>
     </div>
