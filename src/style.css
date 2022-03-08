@@ -31,9 +31,25 @@
 footer {
   margin: 40px 60px 40px 80px;
 }
-h1 {
-  color: blue;
+.currentCity {
+  font-weight: bold;
+  font-size: 45px;
 }
+
+.currentDescription {
+  font-size: 18px;
+}
+.currentTemp {
+  font-weight: bold;
+  font-size: 75px;
+  margin: 10px 20px 10px 40px;
+}
+.units {
+  font-size: 25px;
+  position: relative;
+  top: -33px;
+}
+
 .icon {
   max-width: 35px;
   max-height: 35px;
