@@ -15,24 +15,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>Good morning, name</h1>
-      <form>
-        <div class="row">
-          <div class="col-8">
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
+      <div class="weathercontainer">
+        <h1>Good morning, name</h1>
+        <form>
+          <div class="row">
+            <div class="col-8">
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="cityName"
+                  placeholder="Insert a city"
+                />
+              </div>
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
     <script src="src/script.js"></script>
   </body>
