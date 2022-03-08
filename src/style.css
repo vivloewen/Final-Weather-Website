@@ -42,10 +42,13 @@ footer {
 .currentDescription {
   font-size: 18px;
 }
+#weatherDescription {
+  text-transform: capitalize;
+}
 .currentTemp {
   font-weight: bold;
   font-size: 75px;
-  margin: 10px 20px 10px 40px;
+  margin: 10px auto;
 }
 .units {
   font-size: 25px;
