@@ -42,13 +42,13 @@
         <div class="currentWeather">
           <div class="row">
             <div class="col-6 city">
-              <h1 class="currentCity">Bamberg</h1>
+              <h1 id="currentCity">Bamberg</h1>
               <h2 class="currentDescription">
-                <span class="currentDate">Tuesday, 09:44</span>,
-                <span class="weatherDescription">sunny</span>
+                Last updated: <span id="currentDate"></span>,
+                <span id="weatherDescription">sunny</span>
                 <br />
-                Humidity: <span class="humidity">80%</span>, Wind speed:
-                <span class="wind"> 10</span> km/h
+                Humidity: <span id="humidity">80</span> %, Wind speed:
+                <span id="wind"> 10</span> km/h
               </h2>
             </div>
 
@@ -61,7 +61,7 @@
                   id="currentIcon"
                 />
 
-                18
+                <span id="temperature">18</span>
                 <span class="units">
                   <span class="celsius">°C</span> |
                   <span class="fahrenheit">F </span></span

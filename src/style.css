@@ -34,7 +34,7 @@ footer {
   font-style: italic;
   text-align: center;
 }
-.currentCity {
+#currentCity {
   font-weight: bold;
   font-size: 45px;
 }
