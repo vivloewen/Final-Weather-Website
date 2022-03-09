@@ -42,17 +42,16 @@ function displayTemperature(response) {
   );
   celsiusTemperature = response.data.main.temp;
 }
+function searchCity(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#cityName");
+  newCity(cityElement.value);
+}
 
 function newCity(city) {
   let apiKey = "3f37b12f50b9244320e785a2fb791f14";
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlCity).then(displayTemperature);
-}
-
-function searchCity(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#cityName");
-  newCity(cityElement.value);
 }
 
 function showFahrenheit(event) {
@@ -72,6 +71,29 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = "";
+  forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col forecastDays">
+        <span class="dayOne">${day}</span>
+        <br />
+        <span class="icon" id="iconOne">
+        <img src="img/rain.png" alt="Sunny" id="forecastIcon" />
+        </span>
+        <br />
+        <span class="max">3°</span> <span class="min">1°</span>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -83,4 +105,18 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
+newCity("Bamberg");
+displayForecast();
+
 //let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
+
+// <div class="row">
+//<div class="col forecastDays">
+// <span class="dayOne">Tue</span>
+// <br />
+// <span class="icon" id="iconOne">
+//   <img src="img/rain.png" alt="Sunny" id="forecastIcon" />
+// </span>
+// <br />
+// <span class="max">3°</span> <span class="min">1°</span>
+//</div>;

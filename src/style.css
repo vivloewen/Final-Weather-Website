@@ -18,7 +18,7 @@
   text-align: center;
 }
 #buttonSearch {
-  padding: 5px 30px;
+  padding: 7px 0;
   background-color: black;
   border-color: black;
 }
@@ -40,18 +40,18 @@ footer {
 }
 
 .currentDescription {
-  font-size: 18px;
+  font-size: 15px;
 }
 #weatherDescription {
   text-transform: capitalize;
 }
 .currentTemp {
   font-weight: bold;
-  font-size: 75px;
+  font-size: 65px;
   margin: 10px auto;
 }
 .units {
-  font-size: 25px;
+  font-size: 20px;
   position: relative;
   top: -33px;
 }
@@ -87,8 +87,8 @@ footer {
   max-height: 35px;
 }
 #currentIcon {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
 }
 #forecastIcon {
   max-width: 45px;
