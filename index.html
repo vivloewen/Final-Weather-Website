@@ -19,7 +19,7 @@
       <div class="weathercontainer">
         <h1 class="greeting">Good morning, <span class="name"> name</span></h1>
         <div class="search">
-          <form>
+          <form id="search-form">
             <div class="row">
               <div class="col-10">
                 <div class="mb-3">
@@ -27,12 +27,17 @@
                     type="input"
                     class="form-control"
                     id="cityName"
-                    placeholder="Insert a city"
+                    placeholder="Search for a city"
                   />
                 </div>
               </div>
               <div class="col-2">
-                <button type="submit" class="btn btn-primary" id="buttonSearch">
+                <button
+                  type="search"
+                  class="btn btn-primary"
+                  value="Search"
+                  id="buttonSearch"
+                >
                   Search
                 </button>
               </div>

@@ -1,11 +1,5 @@
-let city = "Hamburg";
-let apiKey = "3f37b12f50b9244320e785a2fb791f14";
-let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
-let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -28,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(apiUrlCity);
   let cityElement = document.querySelector("#currentCity");
   cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#weatherDescription");
@@ -49,4 +42,19 @@ function displayTemperature(response) {
   );
 }
 
-axios.get(apiUrlCity).then(displayTemperature);
+function newCity(city) {
+  let apiKey = "3f37b12f50b9244320e785a2fb791f14";
+  let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlCity).then(displayTemperature);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#cityName");
+  newCity(cityElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
+
+//let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
