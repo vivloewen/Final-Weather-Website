@@ -21,6 +21,18 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function searchCity(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#cityName");
+  newCity(cityElement.value);
+}
+
+function newCity(city) {
+  let apiKey = "3f37b12f50b9244320e785a2fb791f14";
+  let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlCity).then(displayTemperature);
+}
+
 function displayTemperature(response) {
   let cityElement = document.querySelector("#currentCity");
   cityElement.innerHTML = response.data.name;
@@ -41,17 +53,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
   celsiusTemperature = response.data.main.temp;
-}
-function searchCity(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#cityName");
-  newCity(cityElement.value);
-}
 
-function newCity(city) {
-  let apiKey = "3f37b12f50b9244320e785a2fb791f14";
-  let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrlCity).then(displayTemperature);
+  getForecast(response.data.coord);
 }
 
 function showFahrenheit(event) {
@@ -69,6 +72,12 @@ function showCelsius(event) {
   fahrenheitElement.innerHTML = Math.round(celsiusTemperature);
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+}
+
+function getForecast(coordinates) {
+  let apiKey = "3f37b12f50b9244320e785a2fb791f14";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast() {
@@ -106,7 +115,6 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
 newCity("Bamberg");
-displayForecast();
 
 //let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
 
