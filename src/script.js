@@ -1,3 +1,23 @@
+function addGreeting(event) {
+  event.preventDefault();
+  let name = prompt("What is your name?");
+  let newName = document.querySelector("#name");
+  newName.innerHTML = `, ${name}!`;
+}
+
+function changeGreeting(daytime) {
+  let greeting = document.querySelector("#greeting");
+  if (daytime < 12) {
+    greeting.innerHTML = "Good morning";
+  } else {
+    if (daytime >= 12 && daytime < 18) {
+      greeting.innerHTML = "Good afternoon";
+    } else {
+      greeting.innerHTML = "Good evening";
+    }
+  }
+}
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -48,10 +68,42 @@ function displayTemperature(response) {
   currentDateElement.innerHTML = formatDate(response.data.dt * 1000);
   let currentIcon = document.querySelector("#currentIcon");
   let weatherIcon = response.data.weather[0].icon;
-  currentIcon.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
-  );
+  let newIcons = [
+    "img/cloud_flash.png", //0
+    "img/cloud_rain.png", //1
+    "img/cloud_snow.png", //2
+    "img/cloud_sun.png", //3
+    "img/cloud.png", //4
+    "img/rain.png", //5
+    "img/snow.png", //6
+    "img/sunny.png", //7
+  ];
+  if ((weatherIcon = "01d" || "01n")) {
+    currentIcon.setAttribute("src", newIcons[7]);
+  } else {
+    if ((weatherIcon = "02d" || "02n")) {
+      currentIcon.setAttribute("src", newIcons[3]);
+    } else {
+      if ((weatherIcon = "03d" || "03n" || "04d" || "04n" || "50d" || "50n")) {
+        currentIcon.setAttribute("src", newIcons[4]);
+      } else {
+        if ((weatherIcon = "09d" || "09n")) {
+          currentIcon.setAttribute("src", newIcons[1]);
+        } else {
+          if ((weatherIcon = "10d" || "10n")) {
+            currentIcon.setAttribute("src", newIcons[5]);
+          } else {
+            if ((weatherIcon = "11d" || "11n")) {
+              currentIcon.setAttribute("src", newIcons[0]);
+            } else {
+              currentIcon.setAttribute("src", newIcons[6]);
+            }
+          }
+        }
+      }
+    }
+  }
+
   celsiusTemperature = response.data.main.temp;
 
   getForecast(response.data.coord);
@@ -97,26 +149,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
-
-function addGreeting(event) {
-  event.preventDefault();
-  let name = prompt("What is your name?");
-  let newName = document.querySelector("#name");
-  newName.innerHTML = `, ${name}!`;
-}
-
-function changeGreeting(daytime) {
-  let greeting = document.querySelector("#greeting");
-  if (daytime < 12) {
-    greeting.innerHTML = "Good morning";
-  } else {
-    if (daytime >= 12 && daytime < 18) {
-      greeting.innerHTML = "Good afternoon";
-    } else {
-      greeting.innerHTML = "Good evening";
-    }
-  }
 }
 
 function changeColor(event) {
