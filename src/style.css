@@ -28,9 +28,35 @@
 .forecast {
   margin: 60px 60px 40px 80px;
 }
+.colorchange {
+  margin: 80px 60px 10px 80px;
+  font-size: 14px;
+  text-align: center;
+}
+#blue {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+#pink {
+  text-decoration: none;
+  color: palevioletred;
+}
+#yellow {
+  text-decoration: none;
+  color: goldenrod;
+}
+#green {
+  text-decoration: none;
+  color: green;
+}
+#personalize {
+  text-decoration: none;
+  color: black;
+  text-align: right;
+}
 footer {
-  margin: 70px 60px 10px 80px;
-  font-size: 15px;
+  margin: 20px 60px 10px 80px;
+  font-size: 12px;
   font-style: italic;
   text-align: center;
 }

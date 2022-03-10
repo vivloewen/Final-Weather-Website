@@ -117,6 +117,13 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function addGreeting(event) {
+  event.preventDefault();
+  let name = prompt("What is your name?");
+  let newName = document.querySelector("#name");
+  newName.innerHTML = `, ${name}!`;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -127,6 +134,9 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
+
+let personalElement = document.querySelector("#personalize");
+personalElement.addEventListener("click", addGreeting);
 
 newCity("Bamberg");
 
