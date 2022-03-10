@@ -2,19 +2,19 @@
   margin: 30px auto;
 }
 .weathercontainer {
-  max-width: 70%;
-  border: solid black 1px;
-  box-shadow: 2px 2px 2px grey;
+  max-width: 60%;
+  border: solid white 1px;
+  box-shadow: 2px 2px 12px grey;
   border-radius: 10px;
-  margin: 40px 60px;
+  margin: 40px auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 #general-greeting {
-  margin: 40px 60px 20px 80px;
+  margin: 40px 60px 20px 60px;
   text-align: center;
 }
 .search {
-  margin: 40px 60px 40px 80px;
+  margin: 40px 60px 40px 60px;
   text-align: center;
 }
 #buttonSearch {
@@ -22,16 +22,29 @@
   background-color: black;
   border-color: black;
 }
+#buttonSearch:hover {
+  background: #353132;
+  color: white;
+}
+hr {
+  max-width: 80%;
+  text-align: center;
+  color: black;
+}
 .currentWeather {
-  margin: 40px 60px 40px 80px;
+  margin: 40px 60px 40px 60px;
 }
 .forecast {
-  margin: 60px 60px 40px 80px;
+  margin: 60px 60px 40px 60px;
 }
 .colorchange {
-  margin: 80px 60px 10px 80px;
+  margin: 80px 60px 10px 60px;
   font-size: 14px;
   text-align: center;
+  border-top: 1px solid #353132;
+}
+.personalAttributes {
+  font-weight: bold;
 }
 .blue {
   text-decoration: none;
@@ -55,7 +68,7 @@
   text-align: right;
 }
 footer {
-  margin: 20px 60px 10px 80px;
+  margin: 20px 60px 10px 60px;
   font-size: 12px;
   font-style: italic;
   text-align: center;
@@ -97,14 +110,7 @@ footer {
   text-align: center;
   font-size: 18px;
 }
-.dayOne,
-.dayTwo,
-.dayThree,
-.dayFour,
-.dayFive {
-  font-size: 22px;
-  font-weight: bold;
-}
+
 .max {
   font-weight: bold;
 }
