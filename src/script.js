@@ -56,24 +56,6 @@ function displayTemperature(response) {
 
   getForecast(response.data.coord);
 }
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let celsiusElement = document.querySelector("#temperature");
-  let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
-  celsiusElement.innerHTML = Math.round(fahrenheit);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-  let fahrenheitElement = document.querySelector("#temperature");
-  fahrenheitElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
 function getForecast(coordinates) {
   let apiKey = "3f37b12f50b9244320e785a2fb791f14";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -148,14 +130,6 @@ function changeColor(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsius);
 
 let personalElement = document.querySelector("#personalize");
 personalElement.addEventListener("click", addGreeting);

@@ -26,11 +26,7 @@
   background: #353132;
   color: white;
 }
-hr {
-  max-width: 80%;
-  text-align: center;
-  color: black;
-}
+
 .currentWeather {
   margin: 40px 60px 40px 60px;
 }
@@ -93,17 +89,6 @@ footer {
   font-size: 20px;
   position: relative;
   top: -33px;
-}
-#celsius,
-#fahrenheit {
-  text-decoration: none;
-}
-.units .active {
-  color: black;
-  cursor: default;
-}
-.units .active:hover {
-  text-decoration: none;
 }
 
 .forecastDays {
