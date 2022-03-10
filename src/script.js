@@ -98,7 +98,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col forecastDays">
-        <span class="dayOne">${formatDay(forecastDay.dt)}</span>
+        <span class="day">${formatDay(forecastDay.dt)}</span>
         <br />
         <span class="icon" id="iconOne">
         <img src="http://openweathermap.org/img/wn/${
@@ -137,6 +137,15 @@ function changeGreeting(daytime) {
   }
 }
 
+function changeColor(event) {
+  event.preventDefault();
+  let textColor = document.querySelector("#general-greeting");
+  textColor.classList.add("pink");
+  let maxTemp = document.querySelector(".max");
+
+  maxTemp.classList.add("pink");
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -151,20 +160,12 @@ celsiusLink.addEventListener("click", showCelsius);
 let personalElement = document.querySelector("#personalize");
 personalElement.addEventListener("click", addGreeting);
 
+let colorElement = document.querySelector(".pink");
+colorElement.addEventListener("click", changeColor);
+
 newCity("Bamberg");
 
 let now = new Date();
 changeGreeting(now.getHours());
 
 //let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
-
-// <div class="row">
-//<div class="col forecastDays">
-// <span class="dayOne">Tue</span>
-// <br />
-// <span class="icon" id="iconOne">
-//   <img src="img/rain.png" alt="Sunny" id="forecastIcon" />
-// </span>
-// <br />
-// <span class="max">3°</span> <span class="min">1°</span>
-//</div>;

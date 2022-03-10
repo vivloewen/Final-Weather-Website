@@ -10,7 +10,7 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 #general-greeting {
-  margin: 40px 60px 40px 80px;
+  margin: 40px 60px 20px 80px;
   text-align: center;
 }
 .search {
@@ -33,19 +33,19 @@
   font-size: 14px;
   text-align: center;
 }
-#blue {
+.blue {
   text-decoration: none;
   color: cornflowerblue;
 }
-#pink {
+.pink {
   text-decoration: none;
   color: palevioletred;
 }
-#yellow {
+.yellow {
   text-decoration: none;
   color: goldenrod;
 }
-#green {
+.green {
   text-decoration: none;
   color: green;
 }
