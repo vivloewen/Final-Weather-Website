@@ -124,6 +124,19 @@ function addGreeting(event) {
   newName.innerHTML = `, ${name}!`;
 }
 
+function changeGreeting(daytime) {
+  let greeting = document.querySelector("#greeting");
+  if (daytime < 12) {
+    greeting.innerHTML = "Good morning";
+  } else {
+    if (daytime >= 12 && daytime < 18) {
+      greeting.innerHTML = "Good afternoon";
+    } else {
+      greeting.innerHTML = "Good evening";
+    }
+  }
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -139,6 +152,9 @@ let personalElement = document.querySelector("#personalize");
 personalElement.addEventListener("click", addGreeting);
 
 newCity("Bamberg");
+
+let now = new Date();
+changeGreeting(now.getHours());
 
 //let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
 
