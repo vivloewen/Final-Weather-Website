@@ -134,7 +134,7 @@ function displayForecast(response) {
         `<div class="col forecastDays">
         <span class="day">${formatDay(forecastDay.dt)}</span>
         <br />
-        <span class="icon" id="iconOne">
+        <span class="icon">
         <img src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" alt="Sunny" id="forecastIcon" />
@@ -150,24 +150,73 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-function changeColor(event) {
+function changeColorBlue(event) {
   event.preventDefault();
-  let textColor = document.querySelector("#general-greeting");
-  textColor.classList.add("pink");
-  let maxTemp = document.querySelector(".max");
 
-  maxTemp.classList.add("pink");
+  document.getElementById("general-greeting").style.color = "cornflowerblue";
+  document.getElementById("buttonSearch").style.background = "cornflowerblue";
+  document.getElementById("buttonSearch").style.borderColor = "cornflowerblue";
+  document.getElementById("currentCity").style.color = "cornflowerblue";
+  document.getElementById("temperature").style.color = "cornflowerblue";
+  document.getElementById("name").style.color = "cornflowerblue";
+  document.getElementById("weather-forecast").style.color = "cornflowerblue";
+  document.getElementById("background").style.background = "lightblue";
 }
+
+let colorElementBlue = document.querySelector(".blue");
+colorElementBlue.addEventListener("click", changeColorBlue);
+
+function changeColorPink(event) {
+  event.preventDefault();
+
+  document.getElementById("general-greeting").style.color = "palevioletred";
+  document.getElementById("buttonSearch").style.background = "palevioletred";
+  document.getElementById("buttonSearch").style.borderColor = "palevioletred";
+  document.getElementById("currentCity").style.color = "palevioletred";
+  document.getElementById("temperature").style.color = "palevioletred";
+  document.getElementById("name").style.color = "palevioletred";
+  document.getElementById("weather-forecast").style.color = "palevioletred";
+  document.getElementById("background").style.background = "pink";
+}
+let colorElementPink = document.querySelector(".pink");
+colorElementPink.addEventListener("click", changeColorPink);
+
+function changeColorYellow(event) {
+  event.preventDefault();
+
+  document.getElementById("general-greeting").style.color = "goldenrod";
+  document.getElementById("buttonSearch").style.background = "goldenrod";
+  document.getElementById("buttonSearch").style.borderColor = "goldenrod";
+  document.getElementById("currentCity").style.color = "goldenrod";
+  document.getElementById("temperature").style.color = "goldenrod";
+  document.getElementById("name").style.color = "goldenrod";
+  document.getElementById("weather-forecast").style.color = "goldenrod";
+  document.getElementById("background").style.background =
+    "lightgoldenrodyellow";
+}
+let colorElementYellow = document.querySelector(".yellow");
+colorElementYellow.addEventListener("click", changeColorYellow);
+
+function changeColorGreen(event) {
+  event.preventDefault();
+
+  document.getElementById("general-greeting").style.color = "green";
+  document.getElementById("buttonSearch").style.background = "green";
+  document.getElementById("buttonSearch").style.borderColor = "green";
+  document.getElementById("currentCity").style.color = "green";
+  document.getElementById("temperature").style.color = "green";
+  document.getElementById("weather-forecast").style.color = "green";
+  document.getElementById("name").style.color = "green";
+  document.getElementById("background").style.background = "#a1d1a1";
+}
+let colorElementGreen = document.querySelector(".green");
+colorElementGreen.addEventListener("click", changeColorGreen);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
 let personalElement = document.querySelector("#personalize");
 personalElement.addEventListener("click", addGreeting);
-
-let colorElement = document.querySelector(".pink");
-colorElement.addEventListener("click", changeColor);
 
 newCity("Bamberg");
 

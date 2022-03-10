@@ -8,6 +8,7 @@
   border-radius: 10px;
   margin: 40px auto;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background: whitesmoke;
 }
 #general-greeting {
   margin: 40px 60px 20px 60px;
@@ -26,10 +27,31 @@
   background: #353132;
   color: white;
 }
-
 .currentWeather {
   margin: 40px 60px 40px 60px;
 }
+#currentCity {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.currentDescription {
+  font-size: 15px;
+}
+#weatherDescription {
+  text-transform: capitalize;
+}
+#currentTemp {
+  font-weight: bold;
+  font-size: 85px;
+  margin: 0px auto 10px;
+}
+.units {
+  font-size: 30px;
+  position: relative;
+  top: -33px;
+}
+
 .forecast {
   margin: 60px 60px 40px 60px;
 }
@@ -69,27 +91,6 @@ footer {
   font-style: italic;
   text-align: center;
 }
-#currentCity {
-  font-weight: bold;
-  font-size: 45px;
-}
-
-.currentDescription {
-  font-size: 15px;
-}
-#weatherDescription {
-  text-transform: capitalize;
-}
-.currentTemp {
-  font-weight: bold;
-  font-size: 65px;
-  margin: 10px auto;
-}
-.units {
-  font-size: 20px;
-  position: relative;
-  top: -33px;
-}
 
 .forecastDays {
   text-align: center;
@@ -99,16 +100,13 @@ footer {
 .max {
   font-weight: bold;
 }
-.icon {
-  max-width: 35px;
-  max-height: 35px;
-}
+
 #currentIcon {
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 90px;
+  max-height: 90px;
 }
 #forecastIcon {
-  max-width: 45px;
-  max-height: 45px;
+  max-width: 70px;
+  max-height: 70px;
   margin: 5px auto;
 }
